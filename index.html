@@ -1,62 +1,128 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ร้าน PUBG M [STAR]</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #ff4d6d;
+      color: white;
+      padding: 20px;
+      font-size: 1.5rem;
+    }
+
+    .product {
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+      text-align: left;
+    }
+
+    .product h2 {
+      color: #ff4d6d;
+    }
+
+    .price-list {
+      background: #ffe6ea;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .wallet-box {
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff0f5;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #ff4d6d;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff1f4d;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background: #ff4d6d;
+      color: white;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <div class="left">
-      <div class="hamburger" onclick="openMenu()">☰</div>
-      <div class="logo">PUBG M [STAR]</div>
-    </div>
-    <div class="right-icons">
-      <a class="line-btn" href="https://line.me/ti/p/PHtQVx7Avv" target="_blank">LINE</a>
-    </div>
+    ร้าน PUBG M [STAR]
   </header>
 
-  <nav id="sideMenu" class="side-menu">
-    <button class="close" onclick="closeMenu()">✖</button>
-    <div class="menu-block">
-      <a href="index.html">หน้าหลัก</a>
-      <a href="index.html#products">สินค้า</a>
-      <a href="#" onclick="openLogin()">เข้าสู่ระบบ</a>
-      <a href="#" onclick="openRegister()">สมัครสมาชิก</a>
-      <a href="https://line.me/ti/p/PHtQVx7Avv" target="_blank">ติดต่อ (LINE)</a>
+  <section class="product">
+    <h2>🔫 ฟังก์ชัน PUBG IOS [STAR] 🔫</h2>
+    <ul>
+      <li>มองทะลุ</li>
+      <li>เห็นชื่อศัตรู</li>
+      <li>เห็นเลือด</li>
+      <li>ล็อคเป้า 200 เมตร</li>
+      <li>มองของ รถ ปืน ยา</li>
+      <li>กันแบน</li>
+    </ul>
+
+    <div class="price-list">
+      <p>📌 ราคา:</p>
+      <p>1 วัน = 120฿</p>
+      <p>7 วัน = 310฿</p>
+      <p>30 วัน = 690฿</p>
     </div>
-  </nav>
 
-  <main>
-    <section class="hero">
-      <h1>สั่งซื้อ PUBG M [STAR]</h1>
-      <p>เลือกแพ็กด้านล่าง → คลิก "ดูรายละเอียด" เพื่อสั่งซื้อ</p>
-    </section>
+    <p><strong>การติดตั้ง:</strong> ผ่าน TestFlight (IOS 18+)</p>
+    <p style="color:red;">⚠️ การใช้โปรมีโอกาสโดนแบน ร้านไม่รับผิดชอบ</p>
+  </section>
 
-    <section id="products" class="gallery">
-      <!-- สินค้าจะถูกแสดงโดย client.js -->
-    </section>
-  </main>
+  <section class="wallet-box">
+    <h2>💸 ชำระเงินด้วยซองทรูมันนี่</h2>
+    <input type="text" id="envelopeLink" placeholder="วางลิงก์ซองทรูมันนี่ของคุณที่นี่">
+    <br>
+    <button onclick="sendEnvelope()">ส่งซอง</button>
+    <p style="font-size:0.9rem; color:gray;">ลิงก์นี้จะถูกส่งหาผู้ขายเท่านั้น</p>
+  </section>
 
-  <!-- product modal (for details + order) -->
-  <div id="productModal" class="modal" onclick="if(event.target===this) closeProductModal()">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeProductModal()">✖</button>
-      <div id="modalBody"></div>
-    </div>
-  </div>
+  <footer>
+    © 2025 ร้าน PUBG M [STAR]
+  </footer>
 
-  <!-- auth modal placeholders -->
-  <div id="authModal" class="modal" onclick="if(event.target===this) closeAuthModal()">
-    <div class="modal-content small">
-      <button class="modal-close" onclick="closeAuthModal()">✖</button>
-      <div id="authBody"></div>
-    </div>
-  </div>
-
-  <footer>© 2025 YourStore • ติดต่อ: <a href="https://line.me/ti/p/PHtQVx7Avv" target="_blank">LINE</a></footer>
-
+  <!-- โหลด EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="client.js"></script>
+
 </body>
 </html>
