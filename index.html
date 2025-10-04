@@ -3,75 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ร้านขาย PUBG [STAR]</title>
-  <link rel="stylesheet" href="style.css">
+  <title>PUBG M [STAR] Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      background-color: #ff6600;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Hamburger menu */
+    .menu-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #222;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .side-menu a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #ff6600;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-menu a:hover {
+      background-color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Product section */
+    .container {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .product-img {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .options {
+      margin: 20px 0;
+    }
+
+    .options button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #ff6600;
+      color: white;
+    }
+
+    .options button:hover {
+      background-color: #e55b00;
+    }
+
+    .price {
+      font-size: 20px;
+      margin: 15px 0;
+    }
+
+    .buy-btn {
+      padding: 12px 25px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background-color: #e55b00;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .line-logo {
+      width: 60px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
+
   <header>
-    <div class="logo">PUBG [STAR]</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <nav id="sidebar">
-      <ul>
-        <li><a href="#">หน้าแรก</a></li>
-        <li><a href="#products">สินค้า</a></li>
-        <li><a href="#payment">การชำระเงิน</a></li>
-        <li><a href="#contact">ติดต่อเรา</a></li>
-      </ul>
-    </nav>
+    <span class="menu-btn" onclick="openMenu()">☰</span>
+    PUBG M [STAR] SHOP
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <!-- 🟠 ใส่รูป PUBG ของคุณตรงนี้ -->
-    <img src="assets/pubg-banner.jpg" alt="PUBG Banner">
-    <div class="hero-text">
-      <h1>🔥 PUBG MOBILE PRO [STAR] 🔥</h1>
-      <p>ฟังก์ชันเทพสำหรับ IOS ใช้งานง่าย มั่นคง ปลอดภัย</p>
+  <!-- Side menu -->
+  <div id="sideMenu" class="side-menu">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+    <a href="#">หน้าหลัก</a>
+    <a href="#">สินค้า</a>
+    <a href="#">ติดต่อ</a>
+  </div>
+
+  <!-- Product -->
+  <div class="container">
+    <img src="assets/pubg-product.png" alt="PUBG Product" class="product-img">
+    <h2>PUBG M [STAR]</h2>
+    <div class="options">
+      <button onclick="setPrice(120)">1 วัน</button>
+      <button onclick="setPrice(310)">7 วัน</button>
+      <button onclick="setPrice(690)">30 วัน</button>
     </div>
-  </section>
+    <div class="price" id="price">กรุณาเลือกแพ็กเกจ</div>
+    <button class="buy-btn">ซื้อเลย</button>
+  </div>
 
-  <!-- Products Section -->
-  <section id="products" class="products">
-    <h2>สินค้าแนะนำ</h2>
-    <div class="product-card">
-      <!-- 🟠 ใส่รูปสินค้าตรงนี้ -->
-      <img src="assets/pubg-product.jpg" alt="PUBG Hack">
-      <h3>🔫 PUBG IOS [STAR]</h3>
-      <ul>
-        <li>มองทะลุ / เห็นชื่อศัตรู</li>
-        <li>ล็อคเป้า 200 เมตร</li>
-        <li>กันแบนระดับสูง</li>
-      </ul>
-      <p class="price">110฿ / 1 วัน</p>
-      <a href="#payment" class="btn">สั่งซื้อ</a>
-    </div>
-  </section>
-
-  <!-- Payment Section -->
-  <section id="payment" class="payment">
-    <h2>💳 การชำระเงิน</h2>
-    <p>สร้างซองวอเลต แล้วนำลิ้งมากรอกด้านล่าง</p>
-    <form action="send.php" method="POST">
-      <input type="text" name="wallet_link" placeholder="วางลิ้งซองวอเลตที่นี่" required>
-      <input type="email" name="email" placeholder="อีเมลของคุณ" required>
-      <button type="submit">ยืนยันการชำระเงิน</button>
-    </form>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>ติดต่อเรา</h2>
-    <p>LINE: @pubgstar | Email: support@pubgstar.com</p>
-  </section>
+  <footer>
+    <p>ติดต่อเรา:</p>
+    <a href="https://line.me/ti/p/PHtQVx7Avv" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" class="line-logo" alt="Line">
+    </a>
+  </footer>
 
   <script>
-    // เมนูสไลด์
-    const toggle = document.getElementById("menu-toggle");
-    const sidebar = document.getElementById("sidebar");
-    toggle.addEventListener("click", () => {
-      sidebar.classList.toggle("active");
-    });
+    function openMenu() {
+      document.getElementById("sideMenu").style.width = "250px";
+    }
+
+    function closeMenu() {
+      document.getElementById("sideMenu").style.width = "0";
+    }
+
+    function setPrice(amount) {
+      document.getElementById("price").innerText = "ราคา: " + amount + "฿";
+    }
   </script>
+
 </body>
 </html>
