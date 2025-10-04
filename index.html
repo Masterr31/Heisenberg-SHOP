@@ -3,126 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ร้าน PUBG M [STAR]</title>
-  <style>
-    body {
-      font-family: "Arial", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      color: #333;
-      text-align: center;
-    }
-
-    header {
-      background: #ff4d6d;
-      color: white;
-      padding: 20px;
-      font-size: 1.5rem;
-    }
-
-    .product {
-      background: #fff;
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-      text-align: left;
-    }
-
-    .product h2 {
-      color: #ff4d6d;
-    }
-
-    .price-list {
-      background: #ffe6ea;
-      padding: 15px;
-      border-radius: 8px;
-    }
-
-    .wallet-box {
-      margin: 30px auto;
-      padding: 20px;
-      background: #fff0f5;
-      max-width: 500px;
-      border-radius: 12px;
-      box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
-    }
-
-    input {
-      padding: 10px;
-      width: 80%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background: #ff4d6d;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #ff1f4d;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 15px;
-      background: #ff4d6d;
-      color: white;
-    }
-  </style>
+  <title>ร้านขาย PUBG [STAR]</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <!-- Header -->
   <header>
-    ร้าน PUBG M [STAR]
+    <div class="logo">PUBG [STAR]</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="sidebar">
+      <ul>
+        <li><a href="#">หน้าแรก</a></li>
+        <li><a href="#products">สินค้า</a></li>
+        <li><a href="#payment">การชำระเงิน</a></li>
+        <li><a href="#contact">ติดต่อเรา</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="product">
-    <h2>🔫 ฟังก์ชัน PUBG IOS [STAR] 🔫</h2>
-    <ul>
-      <li>มองทะลุ</li>
-      <li>เห็นชื่อศัตรู</li>
-      <li>เห็นเลือด</li>
-      <li>ล็อคเป้า 200 เมตร</li>
-      <li>มองของ รถ ปืน ยา</li>
-      <li>กันแบน</li>
-    </ul>
-
-    <div class="price-list">
-      <p>📌 ราคา:</p>
-      <p>1 วัน = 120฿</p>
-      <p>7 วัน = 310฿</p>
-      <p>30 วัน = 690฿</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- 🟠 ใส่รูป PUBG ของคุณตรงนี้ -->
+    <img src="assets/pubg-banner.jpg" alt="PUBG Banner">
+    <div class="hero-text">
+      <h1>🔥 PUBG MOBILE PRO [STAR] 🔥</h1>
+      <p>ฟังก์ชันเทพสำหรับ IOS ใช้งานง่าย มั่นคง ปลอดภัย</p>
     </div>
-
-    <p><strong>การติดตั้ง:</strong> ผ่าน TestFlight (IOS 18+)</p>
-    <p style="color:red;">⚠️ การใช้โปรมีโอกาสโดนแบน ร้านไม่รับผิดชอบ</p>
   </section>
 
-  <section class="wallet-box">
-    <h2>💸 ชำระเงินด้วยซองทรูมันนี่</h2>
-    <input type="text" id="envelopeLink" placeholder="วางลิงก์ซองทรูมันนี่ของคุณที่นี่">
-    <br>
-    <button onclick="sendEnvelope()">ส่งซอง</button>
-    <p style="font-size:0.9rem; color:gray;">ลิงก์นี้จะถูกส่งหาผู้ขายเท่านั้น</p>
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>สินค้าแนะนำ</h2>
+    <div class="product-card">
+      <!-- 🟠 ใส่รูปสินค้าตรงนี้ -->
+      <img src="assets/pubg-product.jpg" alt="PUBG Hack">
+      <h3>🔫 PUBG IOS [STAR]</h3>
+      <ul>
+        <li>มองทะลุ / เห็นชื่อศัตรู</li>
+        <li>ล็อคเป้า 200 เมตร</li>
+        <li>กันแบนระดับสูง</li>
+      </ul>
+      <p class="price">110฿ / 1 วัน</p>
+      <a href="#payment" class="btn">สั่งซื้อ</a>
+    </div>
   </section>
 
-  <footer>
-    © 2025 ร้าน PUBG M [STAR]
-  </footer>
+  <!-- Payment Section -->
+  <section id="payment" class="payment">
+    <h2>💳 การชำระเงิน</h2>
+    <p>สร้างซองวอเลต แล้วนำลิ้งมากรอกด้านล่าง</p>
+    <form action="send.php" method="POST">
+      <input type="text" name="wallet_link" placeholder="วางลิ้งซองวอเลตที่นี่" required>
+      <input type="email" name="email" placeholder="อีเมลของคุณ" required>
+      <button type="submit">ยืนยันการชำระเงิน</button>
+    </form>
+  </section>
 
-  <!-- โหลด EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="client.js"></script>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>ติดต่อเรา</h2>
+    <p>LINE: @pubgstar | Email: support@pubgstar.com</p>
+  </section>
 
+  <script>
+    // เมนูสไลด์
+    const toggle = document.getElementById("menu-toggle");
+    const sidebar = document.getElementById("sidebar");
+    toggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
