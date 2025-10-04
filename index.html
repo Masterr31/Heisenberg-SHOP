@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PUBG M [STAR] - ร้านค้า</title>
+  <title>HEISENBERG [SHOP]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: #111;
-      color: #fff;
+      color: #eee;
     }
 
     header {
@@ -17,7 +18,8 @@
       padding: 15px;
       text-align: center;
       font-size: 22px;
-      font-weight: bold;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .menu-btn {
@@ -71,6 +73,7 @@
     .product img {
       max-width: 350px;
       border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
     }
 
     .options button {
@@ -82,6 +85,7 @@
       font-size: 16px;
       cursor: pointer;
       border-radius: 5px;
+      transition: 0.3s;
     }
 
     .options button:hover {
@@ -93,9 +97,9 @@
       display: none;
     }
 
-    input[type="text"] {
+    input[type="url"] {
       padding: 10px;
-      width: 250px;
+      width: 300px;
       border-radius: 5px;
       border: none;
       margin-top: 10px;
@@ -109,6 +113,11 @@
     .contact img {
       width: 50px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -116,7 +125,7 @@
 
 <header>
   <span class="menu-btn" onclick="openMenu()">☰</span>
-  PUBG M [STAR] - Official Store
+  HEISENBERG [SHOP]
 </header>
 
 <div id="menu" class="side-menu">
@@ -128,7 +137,7 @@
 
 <div class="product">
   <!-- 🔻 ใส่รูปตรงนี้ -->
-  <img src="assets/pubg-product.png.JPG" alt="PUBG Product">
+  <img src="assets/pubg-product.png.JPEG" alt="PUBG Product">
 
   <h2>เลือกแพ็คเกจ</h2>
   <div class="options">
@@ -141,16 +150,19 @@
   <button onclick="showForm()">ซื้อเลย</button>
 
   <div id="formArea">
-    <label for="tmn">กรอกรหัสซองทรูมันนี่:</label><br>
-    <input type="text" id="tmn" name="tmn" maxlength="14" placeholder="ใส่รหัส 14 หลัก"><br><br>
-    <button onclick="submitForm()">ยืนยันการชำระเงิน</button>
+    <form id="paymentForm" method="POST" action="https://formsubmit.co/YOUREMAIL@example.com">
+      <label for="tmn">วางลิงก์ซองทรูมันนี่ที่นี่:</label><br>
+      <input type="url" id="tmn" name="tmn" placeholder="https://gift.truemoney.com/campaign/?v=xxxx"><br><br>
+      <input type="hidden" name="_subject" value="ลูกค้าใหม่จาก HEISENBERG [SHOP]">
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">ยืนยันการชำระเงิน</button>
+    </form>
   </div>
 </div>
 
 <div class="contact">
   <p>ติดต่อเรา</p>
-  <!-- 🔻 โลโก้ไลน์ -->
-  <a href="https://line.me/ti/p/~YOUR_LINE_ID" target="_blank">
+  <a href="https://line.me/ti/p/heisenshop" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="Line Contact">
   </a>
 </div>
@@ -170,15 +182,6 @@ function setPrice(price) {
 
 function showForm() {
   document.getElementById("formArea").style.display = "block";
-}
-
-function submitForm() {
-  let code = document.getElementById("tmn").value;
-  if(code.length === 14){
-    alert("คุณกรอกรหัส: " + code + " (ระบบทดสอบ)");
-  } else {
-    alert("กรุณากรอกรหัส 14 หลักให้ถูกต้อง");
-  }
 }
 </script>
 
