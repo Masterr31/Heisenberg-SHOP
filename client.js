@@ -1,23 +1,22 @@
-// เริ่มการเชื่อมต่อ EmailJS
-(function(){
-  emailjs.init("_R3DkTc620EFQ-fk7"); // 🔹 ใส่ Public Key ของคุณตรงนี้
+(function() {
+    emailjs.init("_R3DkTc620EFQ-fk7"); // ✅ เปลี่ยนเป็น Public Key ของคุณ
 })();
 
 function sendEnvelope() {
-  const link = document.getElementById("envelopeLink").value;
+    var link = document.getElementById("envelopeLink").value;
 
-  if (!link) {
-    alert("กรุณาวางลิงก์ซองทรูมันนี่ก่อน");
-    return;
-  }
+    if(!link) {
+        alert("กรุณาใส่ลิงก์ซองก่อน!");
+        return;
+    }
 
-  emailjs.send("YOUR_SERVICE_ID", "template_twqzu4d", {
-    user_link: link
-  }).then(function(response) {
-    alert("ส่งลิงก์ซองสำเร็จแล้ว ✅");
-    document.getElementById("envelopeLink").value = "service_mq8a5oa";
-  }, function(error) {
-    alert("เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง ❌");
-    console.error(error);
-  });
+    emailjs.send("service_mq8a5oa", "template_twqzu4d", {
+        envelope_link: link
+    })
+    .then(function(response) {
+        alert("ส่งซองสำเร็จแล้ว! 🎉");
+        document.getElementById("envelopeLink").value = "";
+    }, function(error) {
+        alert("เกิดข้อผิดพลาด: " + JSON.stringify(error));
+    });
 }
