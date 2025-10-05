@@ -7,15 +7,19 @@
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#040404,#0a0a0a);color:#fff}
-.header{display:flex;align-items:center;gap:18px;padding:18px 28px;border-bottom:1px solid rgba(255,184,77,0.06)}
-.header.small{padding:12px 20px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid rgba(255,184,77,0.04);z-index:1000}
+.left-head{display:flex;align-items:center;gap:12px}
 .logo{width:70px;height:70px;object-fit:cover;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,0.6)}
 .small-logo{width:48px;height:48px}
-.brand{flex:1}
-.brand-title{font-size:1.3rem;color:var(--gold);font-weight:700;letter-spacing:1px}
-.brand-sub{color:var(--muted);font-size:0.9rem}
+.brand{display:block}
+.brand-title{font-size:1.2rem;color:var(--gold);font-weight:700;letter-spacing:1px}
+.brand-sub{color:var(--muted);font-size:0.85rem}
 .top-nav a{color:var(--muted);margin-left:14px;text-decoration:none;padding:8px;border-radius:8px}
 .top-nav a:hover{color:var(--gold)}
+.hamburger{display:inline-flex;flex-direction:column;gap:4px;padding:8px;border-radius:8px;background:transparent;border:none;cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:var(--gold);border-radius:2px;transition:all .25s}
+
+/* layout */
 .hero{padding:48px 20px;text-align:center}
 .hero h1{font-size:2rem;color:var(--gold)}
 .hero .muted{color:var(--muted)}
@@ -29,7 +33,7 @@ body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-
 .footer{padding:18px;text-align:center;color:var(--muted);border-top:1px solid rgba(255,184,77,0.04)}
 .line-icon{width:22px;vertical-align:middle;margin-right:6px}
 
-/* product page */
+/* product */
 .container{max-width:1100px;margin:28px auto;padding:0 18px}
 .product-area{display:flex;gap:28px;background:linear-gradient(180deg,#0b0b0b,#0e0e0e);padding:22px;border-radius:12px}
 .left{flex:0 0 48%}
@@ -44,8 +48,8 @@ body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-
 .price-value{font-size:1.4rem;color:#fff;font-weight:800}
 .action-row{display:flex;gap:12px;margin-top:16px}
 
-/* modal-style order (in-page fallback) */
-.modal{position:fixed;inset:0;background:rgba(2,2,2,0.6);display:none;align-items:center;justify-content:center}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(2,2,2,0.6);display:none;align-items:center;justify-content:center;z-index:1300}
 .modal-panel{background:linear-gradient(180deg,#0f0f0f,#0d0d0d);padding:18px;border-radius:12px;width:92%;max-width:520px;border:1px solid rgba(255,255,255,0.03)}
 .modal-close{float:right;background:transparent;border:none;color:var(--muted);font-size:22px}
 
@@ -64,8 +68,33 @@ body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;background:linear-
   width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#fff
 }
 
-/* responsive */
-@media(max-width:900px){
-  .product-area{flex-direction:column}
-  .grid{padding:20px}
+/* hamburger & offcanvas */
+@media(min-width:900px){
+  .hamburger{display:none}
+  .desktop-nav{display:flex}
+  .offcanvas{display:none}
+}
+@media(max-width:899px){
+  .desktop-nav{display:none}
+  .hamburger{display:flex}
+}
+
+/* offcanvas */
+.offcanvas{position:fixed;inset:0;right:0;width:100%;max-width:320px;background:linear-gradient(180deg,#070707,#0f0f0f);box-shadow:-20px 0 40px rgba(0,0,0,0.7);transform:translateX(120%);transition:transform .28s ease-in-out;z-index:1200;padding:22px}
+.offcanvas.open{transform:translateX(0)}
+.off-nav{display:flex;flex-direction:column;gap:12px}
+.off-nav a{color:var(--gold);text-decoration:none;padding:10px;border-radius:8px;background:transparent}
+.off-nav a:hover{background:rgba(255,184,77,0.06);color:#fff}
+
+/* hamburger open -> X */
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* responsive adjustments */
+@media(max-width:640px){
+  .brand-title{font-size:1rem}
+  .logo{width:56px;height:56px}
+  .hero h1{font-size:1.6rem}
+  .card{width:92%}
 }
