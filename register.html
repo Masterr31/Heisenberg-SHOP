@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/><meta name="viewport"content="width=device-width,initial-scale=1"/>
+<title>สมัครสมาชิก - HEISENBERG</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-card" style="max-width:520px;margin:60px auto;padding:18px;background:#0f0f0f;border-radius:10px;">
+    <h2>สมัครสมาชิก</h2>
+    <label>Username</label>
+    <input id="rUser" type="text" placeholder="ชื่อผู้ใช้ (ใช้สำหรับล็อกอิน)">
+    <label>รหัสผ่าน</label>
+    <input id="rPass" type="password" placeholder="รหัสผ่าน">
+    <label>ยืนยันรหัสผ่าน</label>
+    <input id="rPass2" type="password" placeholder="ยืนยันรหัสผ่าน">
+    <div style="margin-top:12px">
+      <button id="doRegister" class="btn primary">สมัครและล็อกอินทันที</button>
+      <a href="login.html" class="btn ghost" style="margin-left:8px">ไปยังหน้าล็อกอิน</a>
+    </div>
+    <p id="regMsg" class="muted small"></p>
+  </div>
+
+<script>
+document.getElementById('doRegister').addEventListener('click', ()=>{
+  const u = document.getElementById('rUser').value.trim();
+  const p = document.getElementById('rPass').value;
+  const p2 = document.getElementById('rPass2').value;
+  if(!u || !p){ alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  if(p !== p2){ alert('รหัสผ่านไม่ตรงกัน'); return; }
+
+  // เก็บ (ไม่เข้ารหัส) ใน localStorage — สำหรับ production ต้องมี backend
+  const users = JSON.parse(localStorage.getItem('heisen_users')||'{}');
+  if(users[u]){ alert('ชื่อผู้ใช้นี้มีอยู่แล้ว'); return; }
+  users[u] = { password: p };
+  localStorage.setItem('heisen_users', JSON.stringify(users));
+
+  // สร้าง session (ล็อกอินอัตโนมัติ)
+  localStorage.setItem('heisen_session', u);
+  alert('สมัครสำเร็จ! คุณจะถูกล็อกอินอัตโนมัติ');
+  window.location.href = 'index.html';
+});
+</script>
+</body>
+</html>
