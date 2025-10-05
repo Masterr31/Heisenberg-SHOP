@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>รายละเอียดสินค้า — HEISENBERG SHOP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header small">
+    <a href="index.html" class="brand-link">
+      <img src="assets/logo.png" alt="logo" class="logo small-logo">
+      <div class="brand-title">HEISENBERG <span class="shop">[SHOP]</span></div>
+    </a>
+    <nav class="top-nav">
+      <a href="index.html">หน้าหลัก</a>
+      <a href="review.html">รีวิว</a>
+      <a href="login.html" id="nav-login-2">เข้าสู่ระบบ</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="productArea" class="product-area">
+      <!-- JS จะเติมข้อมูลที่นี่ -->
+    </section>
+  </main>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
+  <script>
+    // EmailJS init (คุณให้ Public Key มาแล้ว)
+    emailjs.init('DMgLoxaOtcBt1pnjY');
+  </script>
+</body>
+</html>
