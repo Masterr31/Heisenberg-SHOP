@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ล็อกอิน - HEISENBERG SHOP</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>เข้าสู่ระบบ — HEISENBERG SHOP</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="form-container">
-    <h2>ล็อกอิน</h2>
-    <input type="text" id="loginUser" placeholder="ชื่อผู้ใช้">
-    <input type="password" id="loginPass" placeholder="รหัสผ่าน">
-    <button onclick="login()">เข้าสู่ระบบ</button>
-    <p>ยังไม่มีบัญชี? <a href="register.html">สมัครสมาชิก</a></p>
-  </div>
+  <main class="auth-container">
+    <div class="card auth-card">
+      <h2>เข้าสู่ระบบ</h2>
+      <input id="loginUser" placeholder="ชื่อผู้ใช้">
+      <input id="loginPass" type="password" placeholder="รหัสผ่าน">
+      <button id="btnLogin" class="btn primary">เข้าสู่ระบบ</button>
+      <p class="muted">ยังไม่มีบัญชี? <a href="register.html">สมัครสมาชิก</a></p>
+      <p id="loginMsg" class="muted small"></p>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
