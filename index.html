@@ -3,287 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HEISENBERG SHOP | โปร Fluorite Free Fire และ PUBG M STAR ของแท้ ปลอดภัย 100%">
   <title>HEISENBERG SHOP</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #090a0d;
-      color: #eaeaea;
-    }
-
-    /* ---------- Header ---------- */
-    header {
-      background: linear-gradient(90deg, #0a0a0a, #14161c);
-      text-align: center;
-      padding: 60px 20px 40px;
-      box-shadow: 0 0 30px rgba(255,140,0,0.2);
-      position: relative;
-    }
-
-    header img {
-      width: 80px;
-      filter: drop-shadow(0 0 15px #ff8c00);
-      margin-bottom: 15px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      background: linear-gradient(90deg, #ffb347, #ffcc33);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(255,170,0,0.4);
-      margin: 10px 0 5px;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      color: #bdbdbd;
-      font-size: 1rem;
-    }
-
-    /* ---------- Product Cards ---------- */
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-      gap: 40px;
-    }
-
-    .card {
-      background: #111217;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
-      width: 340px;
-      text-align: center;
-      padding: 25px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 30px rgba(255, 165, 0, 0.6);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      border: 2px solid #ff8c00;
-    }
-
-    .card h2 {
-      margin-top: 15px;
-      color: #ffb347;
-      text-shadow: 0 0 5px rgba(255,165,0,0.3);
-    }
-
-    select {
-      background: #1c1e24;
-      color: #ffb347;
-      border: 1px solid #ff8c00;
-      padding: 8px 12px;
-      border-radius: 6px;
-      margin-top: 10px;
-    }
-
-    .price {
-      font-size: 1.3rem;
-      color: #ffd27f;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .buy-btn {
-      background: linear-gradient(90deg, #ff8c00, #ffb347);
-      color: #000;
-      border: none;
-      padding: 10px 22px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .buy-btn:hover {
-      background: linear-gradient(90deg, #ffb347, #ffd27f);
-      transform: scale(1.05);
-    }
-
-    .line-logo {
-      width: 28px;
-      vertical-align: middle;
-      margin-right: 8px;
-    }
-
-    /* ---------- Payment Form ---------- */
-    .payment {
-      text-align: center;
-      background: #0e0f13;
-      padding: 50px 20px;
-      border-top: 2px solid #ff8c00;
-      border-bottom: 2px solid #ff8c00;
-    }
-
-    .payment h2 {
-      color: #ffb347;
-      text-shadow: 0 0 10px rgba(255,165,0,0.4);
-    }
-
-    .payment form {
-      max-width: 420px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .payment input[type="text"], .payment input[type="email"] {
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ffb347;
-      background: #1c1e24;
-      color: #ffb347;
-      font-size: 1rem;
-    }
-
-    .payment button {
-      background: linear-gradient(90deg, #ff8c00, #ffb347);
-      color: #000;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .payment button:hover {
-      background: linear-gradient(90deg, #ffb347, #ffd27f);
-      transform: scale(1.05);
-    }
-
-    /* ---------- Reviews ---------- */
-    .reviews {
-      text-align: center;
-      padding: 50px 20px;
-      background: #101115;
-    }
-
-    .reviews h2 {
-      color: #ffb347;
-    }
-
-    .review-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 20px;
-    }
-
-    .review {
-      background: #16171c;
-      border-radius: 10px;
-      padding: 20px;
-      width: 280px;
-      color: #e0e0e0;
-      box-shadow: 0 0 15px rgba(255,165,0,0.2);
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      background: #08090c;
-      text-align: center;
-      padding: 25px;
-      font-size: 0.9rem;
-      color: #b5b5b5;
-    }
-
-    footer a {
-      color: #ffb347;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
   <header>
-    <!-- 🔸 โลโก้ร้าน -->
-    <img src="assets/IMG_3186.webp" alt="HEISENBERG Logo">
-    <h1>HEISENBERG SHOP</h1>
-    <p>โปรเกมแท้ | ปลอดภัย | ส่งไวที่สุดในไทย</p>
+    <div class="logo">
+      <img src="assets/IMG_3186.webp" alt="HEISENBERG Logo">
+      <h1>HEISENBERG SHOP</h1>
+    </div>
+    <nav id="nav-links">
+      <a href="login.html" id="login-link">ล็อกอิน</a>
+      <a href="register.html" id="register-link">สมัครสมาชิก</a>
+    </nav>
   </header>
 
-  <section class="products">
-    <!-- 🔸 โปร Free Fire -->
-    <div class="card">
-      <img src="assets/IMG_3190.jpeg" alt="Fluorite Free Fire">
-      <h2>Free Fire [Fluorite]</h2>
-      <select id="ff-select" onchange="updatePrice('ff')">
-        <option value="80">1 วัน</option>
-        <option value="350">7 วัน</option>
-        <option value="590">30 วัน</option>
-      </select>
-      <div class="price" id="ff-price">80฿</div>
-      <button class="buy-btn" onclick="window.open('https://line.me/ti/p/PHtQVx7Avv')">
-        <img src="assets/line-logo.png" class="line-logo"> ซื้อผ่าน LINE
-      </button>
-    </div>
-
-    <!-- 🔸 โปร PUBG -->
-    <div class="card">
-      <img src="assets/IMG 3184.jpeg" alt="PUBG M STAR">
-      <h2>PUBG M [STAR]</h2>
-      <select id="pubg-select" onchange="updatePrice('pubg')">
-        <option value="120">1 วัน</option>
-        <option value="320">7 วัน</option>
-        <option value="690">30 วัน</option>
-      </select>
-      <div class="price" id="pubg-price">120฿</div>
-      <button class="buy-btn" onclick="window.open('https://line.me/ti/p/PHtQVx7Avv')">
-        <img src="assets/line-logo.png" class="line-logo"> ซื้อผ่าน LINE
-      </button>
-    </div>
+  <section class="hero">
+    <h2>เลือกเกมของคุณ</h2>
   </section>
 
-  <section class="payment">
-    <h2>💰 ยืนยันการชำระด้วยซองวอเลต</h2>
-    <form action="https://formsubmit.co/yeltinnakit@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="มีลูกค้าใหม่ส่งลิ้งซองวอเลต!">
-      <input type="email" name="email" placeholder="อีเมลของคุณ (ไม่บังคับ)">
-      <input type="text" name="walletlink" placeholder="ใส่ลิ้งซองวอเลตที่นี่" required>
-      <button type="submit">ส่งลิ้งซองวอเลต</button>
-    </form>
-    <p style="margin-top:10px; color:#999;">ระบบจะส่งลิ้งมาที่อีเมลร้านทันที</p>
-  </section>
+  <section class="games">
+    <div class="game-card">
+      <img src="assets/IMG_3184.jpeg" alt="PUBG STAR">
+      <h3>PUBG [STAR]</h3>
+      <a href="pubg.html" class="btn">ดูรายละเอียด</a>
+    </div>
 
-  <section class="reviews">
-    <h2>รีวิวจากลูกค้าจริง</h2>
-    <div class="review-box">
-      <div class="review">🔥 “Fluorite ยิงหัวเนียนมากครับ ทีมตอบไวสุดๆ!”</div>
-      <div class="review">💎 “ร้านนี้ของจริง ส่งโปรไวกว่าเว็บอื่น”</div>
-      <div class="review">⚡ “HEISENBERG SHOP ไม่เคยพลาดเลยครับ”</div>
+    <div class="game-card">
+      <img src="assets/IMG_3190.jpeg" alt="Free Fire Fluorite">
+      <h3>Free Fire [Fluorite]</h3>
+      <a href="fluorite.html" class="btn">ดูรายละเอียด</a>
     </div>
   </section>
 
   <footer>
-    © 2025 HEISENBERG SHOP | ติดต่อเรา 
-    <a href="https://line.me/ti/p/PHtQVx7Avv">LINE</a>
+    <p>© 2025 HEISENBERG SHOP | ติดต่อผ่าน 
+      <a href="https://line.me/ti/p/PHtQVx7Avv" target="_blank">
+        <img src="assets/line-icon.png" class="line-icon" alt="Line">
+      </a>
+    </p>
   </footer>
-
-  <script>
-    function updatePrice(product) {
-      if (product === 'ff') {
-        const price = document.getElementById('ff-select').value;
-        document.getElementById('ff-price').innerText = price + '฿';
-      } else if (product === 'pubg') {
-        const price = document.getElementById('pubg-select').value;
-        document.getElementById('pubg-price').innerText = price + '฿';
-      }
-    }
-  </script>
 
 </body>
 </html>
