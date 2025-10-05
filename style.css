@@ -1,162 +1,123 @@
-:root{
-  --bg:#0b0b0b;
-  --card:#121212;
-  --accent:#ffb84d; /* ทอง */
-  --accent-2:#ff6600;
-  --muted:#bdbdbd;
-  --glass: rgba(255,255,255,0.03);
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: 'Montserrat', sans-serif;
-  background:linear-gradient(180deg,#080808,#0f0f0f);
-  color:#eee;
-  -webkit-font-smoothing:antialiased;
-}
-.site-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 18px;
-  background:linear-gradient(90deg,#0e0e0e,#151515);
-  border-bottom: 2px solid rgba(255,183,77,0.06);
-  position:sticky;
-  top:0;
-  z-index:200;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.brand-logo{
-  width:64px;
-  height:64px;
-  object-fit:cover;
-  border-radius:8px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.7), 0 0 12px rgba(255,182,77,0.06) inset;
-  border:2px solid rgba(255,255,255,0.03);
-}
-.brand-text .brand-title{
-  font-size:1.15rem;
-  font-weight:700;
-  color:var(--accent);
-  letter-spacing:1px;
-  text-shadow:0 1px 0 rgba(0,0,0,0.6);
-}
-.brand-text .brand-sub{
-  color:var(--muted);
-  font-size:0.85rem;
-  margin-top:2px;
-}
-.top-actions .btn{margin-left:8px}
-
-/* buttons */
-.btn{
-  display:inline-block;
-  padding:10px 14px;
-  border-radius:8px;
-  text-decoration:none;
-  cursor:pointer;
-  font-weight:600;
-}
-.btn.small{padding:6px 10px;font-size:0.9rem}
-.btn.primary{
-  background:linear-gradient(180deg,var(--accent),var(--accent-2));
-  color:#081010;
-  box-shadow:0 6px 18px rgba(255,136,0,0.12);
-  border:none;
-}
-.btn.ghost{
-  background:transparent;
-  color:var(--muted);
-  border:1px solid rgba(255,255,255,0.03);
+body {
+  background: #0d0d0d;
+  color: #f2f2f2;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* hamburger */
-.hamburger{
-  background:transparent;
-  border:none;
-  color:#fff;
-  font-size:20px;
-  padding:6px;
-  margin-right:6px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #111, #222);
+  padding: 15px 30px;
+  border-bottom: 2px solid gold;
 }
 
-/* sidebar */
-.sidebar{
-  position:fixed;
-  top:0; left:-320px;
-  width:320px;
-  height:100%;
-  background:linear-gradient(180deg,#0f0f0f,#111);
-  transition:left .28s cubic-bezier(.2,.9,.3,1);
-  z-index:300;
-  padding-top:50px;
-  box-shadow: 6px 0 30px rgba(0,0,0,0.6);
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.sidebar.active{left:0}
-.sidebar .close{position:absolute; right:12px; top:8px; background:transparent; border:none; color:var(--muted); font-size:32px}
-.sidebar ul{list-style:none;padding:0;margin:20px}
-.sidebar ul li{border-bottom:1px solid rgba(255,255,255,0.02)}
-.sidebar ul li a{display:block;padding:16px;color:var(--muted);text-decoration:none}
 
-/* hero */
-.hero{
-  height:260px;
-  background:linear-gradient(180deg, rgba(255,102,0,0.06), rgba(0,0,0,0.2));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  margin:18px;
-  border-radius:12px;
-  box-shadow:0 8px 30px rgba(0,0,0,0.6);
+.logo img {
+  width: 45px;
+  height: 45px;
 }
-.hero-inner h1{font-size:1.8rem;color:var(--accent)}
-.hero-inner .muted{color:var(--muted)}
 
-/* product card */
-.product{padding:26px 18px}
-.card{
-  background:linear-gradient(180deg,#0f0f0f,#151515);
-  max-width:980px;margin:0 auto;border-radius:12px;padding:18px;display:flex;gap:24px;align-items:center;
-  box-shadow:0 10px 40px rgba(0,0,0,0.6);
-  border:1px solid rgba(255,255,255,0.02);
+.logo h1 {
+  color: gold;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
-.card-media{flex:0 0 360px}
-.product-img{width:100%;border-radius:10px;box-shadow:0 6px 30px rgba(0,0,0,0.7)}
-.card-body{flex:1}
-.product-title{color:var(--accent);font-size:1.4rem;margin:6px 0}
-.features{color:var(--muted);margin:10px 0}
-.pack-selector{margin:12px 0}
-.pack{margin-right:8px;padding:10px 14px;border-radius:8px;border:none;background:transparent;color:var(--muted);cursor:pointer}
-.pack.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#081010;font-weight:700}
 
-/* price */
-.price-row{display:flex;align-items:center;gap:12px;margin-top:10px}
-.price-label{color:var(--muted)}
-.price-value{font-size:1.2rem;color:#fff;font-weight:700}
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
 
-/* actions */
-.actions{margin-top:16px;gap:12px;display:flex;align-items:center}
-.actions .btn{min-width:140px}
+nav a:hover {
+  color: gold;
+}
 
-/* modal */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:500}
-.modal-inner{background:#0c0c0c;padding:20px;border-radius:12px;width:90%;max-width:520px;border:1px solid rgba(255,255,255,0.03)}
-.modal-close{float:right;background:transparent;border:none;color:var(--muted);font-size:26px}
-label{display:block;margin-top:10px;color:var(--muted);font-size:0.95rem}
-input[type="url"], input[type="text"]{width:100%;padding:10px;margin-top:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff}
+.hero {
+  text-align: center;
+  padding: 40px 0;
+}
 
-/* contact */
-.contact{padding:28px;text-align:center}
-.line-logo{width:56px;vertical-align:middle;margin-right:8px}
+.games {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px;
+}
 
-/* footer */
-.site-footer{text-align:center;padding:20px;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:30px}
+.game-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,215,0,0.2);
+}
 
-/* small */
-.muted{color:var(--muted)}
-.small{font-size:0.9rem}
+.game-card img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  background: gold;
+  color: black;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #ffcc00;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #333;
+}
+
+.line-icon {
+  width: 25px;
+  vertical-align: middle;
+}
+
+.form-container {
+  width: 300px;
+  margin: 100px auto;
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+input, select {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-buy {
+  background: gold;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
