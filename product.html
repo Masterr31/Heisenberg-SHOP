@@ -7,16 +7,40 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header small">
-    <a href="index.html" class="brand-link">
-      <img src="assets/logo.png" alt="logo" class="logo small-logo">
-      <div class="brand-title">HEISENBERG <span class="shop">[SHOP]</span></div>
-    </a>
-    <nav class="top-nav">
+  <header class="header">
+    <div class="left-head">
+      <button id="hamburger" class="hamburger" aria-label="เมนู">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a href="index.html" class="brand-link">
+        <img src="assets/IMG_3186.webp" alt="HEISENBERG" class="logo">
+        <div class="brand">
+          <div class="brand-title">HEISENBERG <span class="shop">[SHOP]</span></div>
+          <div class="brand-sub">ศูนย์รวมโปรเกมแท้ ราคาถูก ปลอดภัย 100%</div>
+        </div>
+      </a>
+    </div>
+
+    <nav class="top-nav desktop-nav">
       <a href="index.html">หน้าหลัก</a>
       <a href="review.html">รีวิว</a>
-      <a href="login.html" id="nav-login-2">เข้าสู่ระบบ</a>
+      <a href="product.html?game=pubg">PUBG</a>
+      <a href="product.html?game=fluorite">Fluorite</a>
+      <a href="login.html" id="nav-login">เข้าสู่ระบบ</a>
+      <a href="register.html" id="nav-register">สมัครสมาชิก</a>
     </nav>
+
+    <div id="offcanvas" class="offcanvas" aria-hidden="true">
+      <nav class="off-nav">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="review.html">รีวิว</a>
+        <a href="product.html?game=pubg">PUBG [STAR]</a>
+        <a href="product.html?game=fluorite">Free Fire [Fluorite]</a>
+        <a href="login.html" id="off-login">เข้าสู่ระบบ</a>
+        <a href="register.html" id="off-register">สมัครสมาชิก</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
@@ -25,12 +49,7 @@
     </section>
   </main>
 
-  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="script.js" defer></script>
-  <script>
-    // EmailJS init (คุณให้ Public Key มาแล้ว)
-    emailjs.init('DMgLoxaOtcBt1pnjY');
-  </script>
 </body>
 </html>
