@@ -9,37 +9,73 @@
 </head>
 <body>
   <header class="header">
-  <div class="left-head">
-    <button id="hamburger" class="hamburger" aria-label="เมนู">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="left-head">
+      <button id="hamburger" class="hamburger" aria-label="เมนู">
+        <span></span><span></span><span></span>
+      </button>
 
-    <a href="index.html" class="brand-link">
-      <img src="assets/IMG_3186.webp" alt="HEISENBERG" class="logo">
-      <div class="brand">
-        <div class="brand-title">HEISENBERG <span class="shop">[SHOP]</span></div>
-        <div class="brand-sub">ศูนย์รวมโปรเกมแท้ ราคาถูก ปลอดภัย 100%</div>
-      </div>
-    </a>
-  </div>
+      <a href="index.html" class="brand-link">
+        <img src="assets/IMG_3186.webp" alt="HEISENBERG" class="logo">
+        <div class="brand">
+          <div class="brand-title">HEISENBERG <span class="shop">[SHOP]</span></div>
+          <div class="brand-sub">ศูนย์รวมโปรเกมแท้ ราคาถูก ปลอดภัย 100%</div>
+        </div>
+      </a>
+    </div>
 
-  <!-- desktop nav (hidden on small screens) -->
-  <nav class="top-nav desktop-nav">
-    <a href="index.html">หน้าหลัก</a>
-    <a href="review.html">รีวิว</a>
-    <a href="login.html" id="nav-login">เข้าสู่ระบบ</a>
-    <a href="register.html" id="nav-register">สมัครสมาชิก</a>
-  </nav>
-
-  <!-- off-canvas menu (for mobile) -->
-  <div id="offcanvas" class="offcanvas" aria-hidden="true">
-    <nav class="off-nav">
+    <nav class="top-nav desktop-nav">
       <a href="index.html">หน้าหลัก</a>
       <a href="review.html">รีวิว</a>
-      <a href="product.html?game=pubg">PUBG [STAR]</a>
-      <a href="product.html?game=fluorite">Free Fire [Fluorite]</a>
-      <a href="login.html" id="off-login">เข้าสู่ระบบ</a>
-      <a href="register.html" id="off-register">สมัครสมาชิก</a>
+      <a href="product.html?game=pubg">PUBG</a>
+      <a href="product.html?game=fluorite">Fluorite</a>
+      <a href="login.html" id="nav-login">เข้าสู่ระบบ</a>
+      <a href="register.html" id="nav-register">สมัครสมาชิก</a>
     </nav>
-  </div>
-</header>
+
+    <div id="offcanvas" class="offcanvas" aria-hidden="true">
+      <nav class="off-nav">
+        <a href="index.html">หน้าหลัก</a>
+        <a href="review.html">รีวิว</a>
+        <a href="product.html?game=pubg">PUBG [STAR]</a>
+        <a href="product.html?game=fluorite">Free Fire [Fluorite]</a>
+        <a href="login.html" id="off-login">เข้าสู่ระบบ</a>
+        <a href="register.html" id="off-register">สมัครสมาชิก</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>เลือกโปรที่ต้องการ</h1>
+      <p class="muted">บริการรวดเร็ว ปลอดภัย โดยทีม HEISENBERG</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <img src="assets/IMG_3234.jpeg" alt="PUBG M STAR">
+        <h3>PUBG M [STAR]</h3>
+        <p class="muted">โปรสำหรับ iOS — ติดตั้งผ่าน TestFlight</p>
+        <a class="btn detail" href="product.html?game=pubg">ดูรายละเอียด</a>
+      </article>
+
+      <article class="card">
+        <img src="assets/IMG_3235.gif" alt="Fluorite Free Fire">
+        <h3>Free Fire [Fluorite]</h3>
+        <p class="muted">โปร Fluorite — เสถียร และได้รับการดูแล</p>
+        <a class="btn detail" href="product.html?game=fluorite">ดูรายละเอียด</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 HEISENBERG SHOP • ติดต่อผ่าน 
+      <a href="https://line.me/ti/p/PHtQVx7Avv" target="_blank" rel="noopener">
+        <img src="assets/IMG_ 3238.jpeg" class="line-icon" alt="LINE"> LINE
+      </a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
