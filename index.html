@@ -1,81 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>HEISENBERG SHOP</title>
-  <meta name="description" content="HEISENBERG SHOP — โปร PUBG & Fluorite Free Fire พรีเมียม">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEISENBERG SHOP – เว็บขายโปรระดับพรีเมียม</title>
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --gold: #ffb84d;
+      --text: #eaeaea;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid rgba(255, 184, 77, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 22px;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    header h1 { color: var(--gold); font-size: 1.3em; margin: 0; }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 20px;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--gold); }
+    .banner {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 184, 77, 0.1);
+    }
+    .shop-section {
+      text-align: center;
+      margin-top: 40px;
+      max-width: 800px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #ffd37f; }
+    footer {
+      margin-top: 60px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <div class="left-head">
-      <button id="hamburger" class="hamburger" aria-label="เมนู">
-        <span></span><span></span><span></span>
-      </button>
-
-      <a href="index.html" class="brand-link">
-        <img src="assets/IMG_3186.webp" alt="HEISENBERG" class="logo">
-        <div class="brand">
-          <div class="brand-title">HEISENBERG <span class="shop">[SHOP]</span></div>
-          <div class="brand-sub">ศูนย์รวมโปรเกมแท้ ราคาถูก ปลอดภัย 100%</div>
-        </div>
-      </a>
-    </div>
-
-    <nav class="top-nav desktop-nav">
-      <a href="index.html">หน้าหลัก</a>
-      <a href="review.html">รีวิว</a>
-      <a href="product.html?game=pubg">PUBG</a>
-      <a href="product.html?game=fluorite">Fluorite</a>
-      <a href="login.html" id="nav-login">เข้าสู่ระบบ</a>
-      <a href="register.html" id="nav-register">สมัครสมาชิก</a>
+  <header>
+    <h1>HEISENBERG SHOP</h1>
+    <nav>
+      <a href="index.html">หน้าแรก</a>
+      <a href="order.html">สั่งซื้อ</a>
+      <a href="contact.html">ติดต่อ</a>
     </nav>
-
-    <div id="offcanvas" class="offcanvas" aria-hidden="true">
-      <nav class="off-nav">
-        <a href="index.html">หน้าหลัก</a>
-        <a href="review.html">รีวิว</a>
-        <a href="product.html?game=pubg">PUBG [STAR]</a>
-        <a href="product.html?game=fluorite">Free Fire [Fluorite]</a>
-        <a href="login.html" id="off-login">เข้าสู่ระบบ</a>
-        <a href="register.html" id="off-register">สมัครสมาชิก</a>
-      </nav>
-    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>เลือกโปรที่ต้องการ</h1>
-      <p class="muted">บริการรวดเร็ว ปลอดภัย โดยทีม HEISENBERG</p>
-    </section>
+  <img src="assets/IMG_3186.webp" class="banner" alt="Banner">
 
-    <section class="grid">
-      <article class="card">
-        <img src="assets/IMG_3234.jpeg" alt="PUBG M STAR">
-        <h3>PUBG M [STAR]</h3>
-        <p class="muted">โปรสำหรับ iOS — ติดตั้งผ่าน TestFlight</p>
-        <a class="btn detail" href="product.html?game=pubg">ดูรายละเอียด</a>
-      </article>
+  <section class="shop-section">
+    <h2>💎 โปรแท้ ปลอดภัย ใช้งานง่าย</h2>
+    <p>รวมสุดยอดโปรแกรมเกมคุณภาพสูง ผ่านการทดสอบและรับรองจากทีม Heisenberg.</p>
+    <a href="order.html" class="btn">🛒 สั่งซื้อทันที</a>
+  </section>
 
-      <article class="card">
-        <img src="assets/IMG_3235.gif" alt="Fluorite Free Fire">
-        <h3>Free Fire [Fluorite]</h3>
-        <p class="muted">โปร Fluorite — เสถียร และได้รับการดูแล</p>
-        <a class="btn detail" href="product.html?game=fluorite">ดูรายละเอียด</a>
-      </article>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 HEISENBERG SHOP • ติดต่อผ่าน 
-      <a href="https://line.me/ti/p/PHtQVx7Avv" target="_blank" rel="noopener">
-        <img src="assets/IMG_ 3238.jpeg" class="line-icon" alt="LINE"> LINE
-      </a>
-    </p>
+  <footer>
+    © 2025 HEISENBERG SHOP — All rights reserved.
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="script.js" defer></script>
 </body>
 </html>
