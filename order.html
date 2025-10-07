@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สั่งซื้อสินค้า – HEISENBERG SHOP</title>
+  <style>
+    body {
+      background: #0b0b0b;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    h1 { color: #ffb84d; }
+    form {
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+    button {
+      background: #ffb84d;
+      color: #000;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #ffd37f; }
+  </style>
+</head>
+<body>
+  <h1>🛒 สั่งซื้อสินค้า</h1>
+  <form id="orderForm">
+    <input type="text" placeholder="ชื่อสินค้า" id="product" required>
+    <input type="text" placeholder="ชื่อผู้ซื้อ" id="name" required>
+    <input type="text" placeholder="ช่องทางติดต่อ (เช่น LINE, Discord)" id="contact" required>
+    <textarea placeholder="รายละเอียดเพิ่มเติม" id="note"></textarea>
+    <button type="submit">ส่งข้อมูลสั่งซื้อ</button>
+  </form>
+
+  <script>
+  const webhook = "YOUR_DISCORD_WEBHOOK_URL"; // <--- ใส่ของคุณเอง
+  const form = document.getElementById("orderForm");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const msg = {
+      content: `🧾 **คำสั่งซื้อใหม่!**
+      🛍️ สินค้า: ${product.value}
+      🙋‍♂️ ชื่อผู้ซื้อ: ${name.value}
+      📞 ติดต่อ: ${contact.value}
+      📝 หมายเหตุ: ${note.value}`
+    };
+    fetch(webhook, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(msg)
+    }).then(() => {
+      alert("✅ ส่งข้อมูลสั่งซื้อแล้ว! กรุณารอติดต่อกลับจากทีมงานทาง Discord หรือ LINE");
+      form.reset();
+    }).catch(err => alert("❌ เกิดข้อผิดพลาดในการส่งข้อมูล"));
+  });
+  </script>
+</body>
+</html>
